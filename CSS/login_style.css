@@ -96,3 +96,8 @@ h2 {
     max-width: 90%;
   }
 }
+.login-form input {
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 30px;
+}
