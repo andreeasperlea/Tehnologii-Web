@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Idei propuse de studenti</title>
+  <link rel="stylesheet" href="{% static 'CSS/ideas_style.css' %}">
+</head>
+
+<body>
+
+  <h1>Idei de proiecte propuse de studenti</h1>
+
+  <form id="ideaForm">
+    <input type="text" id="title" placeholder="Titlu proiect..." required>
+
+    <textarea id="description" placeholder="Descrierea proiectului..." required></textarea>
+
+    <input type="text" id="author" placeholder="Autor..." required>
+
+    <button type="submit">Trimite</button>
+  </form>
+
+  <h2>Lista ideilor</h2>
+  <ul id="ideaList"></ul>
+
+  <script src="{% static 'JS/ideas.js' %}" defer></script>
+</body>
+</html>

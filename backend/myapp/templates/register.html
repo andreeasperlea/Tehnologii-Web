@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Înregistrare</title>
+
+  <link rel="stylesheet" href="{% static 'CSS/register_style.css' %}">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <main class="page">
+    <section class="card">
+
+      <div class="logo-box">
+        <img src="{% static 'assets/sigla_TW.png' %}" alt="Logo TW">
+      </div>
+
+      <h1>Inregistrare</h1>
+      <form class="register-form" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <div class="row">
+          <label for="username">Nume de utilizator</label>
+          <input type="text" id="username" name="username" placeholder="ex: John" required>
+        </div>
+
+        <div class="row">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="ex: john@example.com" required>
+        </div>
+
+        <div class="row two-col">
+          <div>
+            <label for="password">Parola</label>
+            <input type="password" id="password" name="password" placeholder="Introduceti parola" required>
+          </div>
+          <div>
+            <label for="confirm_password">Confirma parola</label>
+            <input type="password" id="confirm_password" name="confirm_password" placeholder="Reintroduceti parola" required>
+          </div>
+        </div>
+
+        <div class="row">
+          <label for="avatar">Incarcati o poza de profil (optional)</label>
+          <input type="file" id="avatar" name="avatar" accept="image/*">
+        </div>
+
+        <div class="actions">
+          <button type="submit" class="btn primary">Creeaza cont</button>
+          <button type="reset" class="btn ghost">Reseteaza</button>
+        </div>
+
+        <p class="login-link">
+          Ai deja un cont?
+          <a href="{% url 'login' %}">Mergi la login</a>
+        </p>
+
+      </form>
+    </section>
+  </main>
+
+  <script src="{% static 'JS/script.js' %}" defer></script>
+</body>
+</html>
